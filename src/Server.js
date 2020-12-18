@@ -45,7 +45,7 @@ app.post('/register', (req, res) => {handleRegisterModule.handleRegister(req, re
 app.post('/post', (req, res) => {createPostModule.createPost(req, res, database)})
 app.post('/getmyfollowerdata', (req, res) => {followerDataModule.getMyFollowerData(req, res, database)})
 
-const port = 3000
-app.listen(port, () => {
+const port = process.env.PORT
+app.listen(port || 3000, () => {
   console.log(`Server now running on port ${port}`)
 });
