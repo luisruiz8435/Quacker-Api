@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
-const databaseModule = require('./databaseConfig');
+const databaseModule = require('./databaseConfig.js');
 
 //Middleware
 app.use(bodyParser.json())

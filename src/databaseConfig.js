@@ -9,4 +9,5 @@ const database = knex({
     database : 'Quacker'
   }
 });
+
 module.exports = {database: database}
