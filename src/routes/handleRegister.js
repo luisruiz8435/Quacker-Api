@@ -10,7 +10,6 @@ const handleRegister = (req, res, database, bcrypt) => {
     date_joined: new Date()
   })
   .then(user => {
-    res.json(user[0]);
   })
   .then(() => {
     bcrypt.hash(password, saltRounds).then(function(hash) {
