@@ -1,9 +1,8 @@
-const handleRegister = (req, res, database, bcrypt) => {
+const handleRegister = (req, res, database, bcrypt, saltRounds) => {
   //Has to return the route. Has to add the user to the users table
   const {email, username, password} = req.body;
 
   database('users')
-  .returning('*')
   .insert({
     email: email,
     username: username,

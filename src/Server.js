@@ -42,7 +42,7 @@ app.post('/visitingposts', (req, res) => {visitingPostsModule.getVisitingPosts(r
 app.post(('/isfollowing'), (req, res) => {isFollowingTestModule.isFollowingTester(req, res, database)})
 app.post('/followupdate', (req, res) => {followUpdaterModule.followUpdater(req, res, database)})
 app.post('/signin', (req, res) => {handleSignInModule.handleSignIn(req, res, database, bcrypt)})
-app.post('/register', (req, res) => {handleRegisterModule.handleRegister(req, res, database, bcrypt)})
+app.post('/register', (req, res) => {handleRegisterModule.handleRegister(req, res, database, bcrypt, saltRounds)})
 app.post('/post', (req, res) => {createPostModule.createPost(req, res, database)})
 app.post('/getmyfollowerdata', (req, res) => {followerDataModule.getMyFollowerData(req, res, database)})
 
