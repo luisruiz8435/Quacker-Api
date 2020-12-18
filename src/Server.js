@@ -3,7 +3,17 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
-const databaseModule = require('./databaseConfig.js');
+const knex = require('knex');
+
+const database = knex({
+  client: 'pg',
+  connection: {
+    host : '127.0.0.1',
+    user : '',
+    password : '',
+    database : 'Quacker'
+  }
+});
 
 //Middleware
 app.use(bodyParser.json())
@@ -23,8 +33,6 @@ const followerDataModule = require('./routes/followerData')
 
 //Salt for bycrypt
 const saltRounds = 10;
-
-const {database} = databaseModule
 
 app.post('/', (req, res) => {index.handleIndex(req, res, database)});
 app.post('/users', (req, res) => {usersModule.users(req, res, database)});
