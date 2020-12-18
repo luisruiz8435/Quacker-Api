@@ -26,6 +26,7 @@ const handleRegister = (req, res, database, bcrypt) => {
     });
   })
   .catch(err => {
+    console.log("err: ", err)
     if (err.detail === `Key (username)=(${username}) already exists.`) {
       res.status(400).json('Username Taken!');
     }
