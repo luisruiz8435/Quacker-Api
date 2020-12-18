@@ -20,7 +20,7 @@ const handleRegister = (req, res, database, bcrypt) => {
         hash: hash,
         email: email,
       })
-      .then(() => res.json({username: username});)
+      .then(() => res.json({username: username}));
       .catch(err => {
         console.log(err)
       })
