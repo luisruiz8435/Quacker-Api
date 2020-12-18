@@ -34,6 +34,7 @@ const followerDataModule = require('./routes/followerData')
 //Salt for bycrypt
 const saltRounds = 10;
 
+app.get('/', (req, res) => {res.send('it is working :) ')})
 app.post('/', (req, res) => {index.handleIndex(req, res, database)});
 app.post('/users', (req, res) => {usersModule.users(req, res, database)});
 app.post('/myposts', (req, res) => {myPostsModule.getMyPosts(req, res, database)})
